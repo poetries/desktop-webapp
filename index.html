@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>webapp桌面-poetries</title>
+<link href="css/indexcss.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/run.js"></script>
+<script type="text/javascript" src="js/desktop.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/system.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
+<script type="text/javascript" src="js/show3d.js"></script>
+<script type="text/javascript" src="js/html5shiv.js"></script>
+<script type="text/javascript" src="js/talk.js"></script>
+<script type="text/javascript" src="js/recom.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
+<script type="text/javascript" src="js/citymap.js"></script>
+<script type="text/javascript" src="js/talks.js"></script>
+<!--[if IE 6]>
+<style>
+#ie6{position:absolute;width:100%;height:100%;background:#162a31;z-index:999;
+text-align:center;display:block}
+#ie6 span{font-size:60px;line-height:400px;color:#fff;}
+</style>
+<![endif]-->
+
+<!--[if IE 7]>
+<style>
+.work-wrap .zm-btn a{background:url("image/bg/iCourseBtn.png") no-repeat;font-weight:bold;}
+</style>
+<![endif]-->
+<script>
+$(function(){
+	if(!Modernizr.csstransforms3d){
+		$('.login-box').css('display','none');
+	}
+})
+</script>
+</head>
+
+<body>
+<div id="back" style="display:none">可以使用css3样式</div>
+<!-- IE6屏蔽样式 -->
+<div id="ie6">
+	<span>请升级浏览器到ie6以上版本再观看此网站！</span>
+</div>
+<!-- IE6屏蔽样式end --> 
+
+<!-- 桌面导航  -->
+<div id="bgs">
+	<img src="image/bg/wm1.jpg" class="bg" />
+  <div id="navber">	 
+	<div class="nav-bg">
+		<div class="login-number">
+			<span class="login-icon"><img src="" /></span>
+			<em></em>
+			<a href="javascript:;" class="login-end">[退出]</a>
+		</div>
+	</div>
+	<div class="seach"></div>
+	<div class="nav clear">
+		<ul>
+			<li class="nav1">
+				<a href="javascript:;" class="nav-a active"></a>
+			</li>
+			<li class="nav2">
+				<a href="javascript:;" class="nav-b"></a>
+			</li>
+			<li class="nav3">
+				<a href="javascript:;" class="nav-c"></a>
+			</li>
+		</ul>
+	</div>
+	<div class="tool">
+		<ul>
+			<li class="wall">
+				<div class="walls">壁纸</div>
+				<div class="wall-bg">
+					<ul class="clear wall-img">
+
+					</ul>
+					<p>
+						<a href="#" class="trade">换一批</a><a href="#" class="move-bg">更多精彩壁纸</a>
+					</p>
+				</div>
+			</li>
+			<li>
+				<div class="market">市场</div>
+			</li>
+			<li>
+				<div class="tools">工具</div>
+			</li>
+		</ul>
+		<span class="nav-icon" id="nav-logins"></span>
+		<div class="account-info">
+			<div class="mod_userinfo_basic">
+				<div class="mod_userinfo_avatar">
+					<span class="info-icon"><img src="image/talk/port1.png" /></span>
+				</div>
+				<div class="mod_userinfo_name">
+					<span>您好, <em class="info-name">莫扬的天空</em></span>
+					<a href="javascript:;" class="change-pass">修改密码</a>
+				</div>
+				<div class="mod_userinfo_mark">
+					<span class="userinfo_markicon"></span>
+					<a href="javascript:;">退出</a>
+				</div>
+			</div>
+			<div class="weather" id="weather">
+				<div class="weather_su" id="weather_s"><strong>今天：</strong>多云 17℃~31℃</div>
+				<div class="weather_tom" id="weather_t"><strong>明天：</strong>多云转阴 17℃~29℃ </div>
+				<a href="javascript:;" class="region" id="region_but"><strong>地区：</strong><span>深圳</span></a>
+				<div class="weather_time" id="weather_time">当前时间为07:12</div>
+				<div class="weather_menu">
+					<select id="city1">
+						<option>请选择地区</option>
+					</select>
+					<select id="city2">
+						<option>请选择地区</option>
+					</select>
+					<input type="button" value="确定" class="we_but1">
+					<input type="button" value="取消">
+				</div>
+			</div>
+			<div class="privilege">
+				<strong>会员特权：</strong><a href="javascript:;">Q+说说</a><a href="javascript:;">收藏壁纸</a>
+			</div>
+		</div>
+	</div>
+</div> 
+<!-- 桌面导航end  -->
+
+<div class="q-alert" id="qs-alert">
+	<h4>
+		<span>Q+桌面壁纸</span>
+		<a href="#" class="q-switch"></a>
+		<a href="#" class="q-close"  class=""></a>
+	</h4>
+	<div class="q-title">
+		<a href="#" class="active">壁纸库</a><a href="#">我的壁纸</a>
+	</div>
+	<div class="desk-bg"  style="display:block">
+		<ul class="clear">
+			<li></li>
+			<li></li>
+		</ul>
+		<div class="q-scroll">
+			<span></span>
+		</div>
+	</div>
+	<span class="my-pic">收藏成功<em></em></span>
+	<div class="desk-cok"  style="display:none">
+		<div class="desk-cok-title">
+			<p><a href="#">最近使用</a><a href="#">我的收藏</a><a href="#">我的壁纸</a></p>
+			<span class="cok-move"></span>
+		</div>
+		<div class="desk-cok-cont" style="display:block">
+			<ul class="clear clear-img" style="display:block">
+			</ul>
+			<ul class="clear desk-coll">
+				<div class="cok-bg"><img src="image/bg/collect.jpg" /></div>
+			</ul>
+			<ul class="clear wall-bgs">
+				<li>
+					<div>
+						<img src="image/bg/mvs1.jpg" />
+						<p><a href="#"></a><em title="设为壁纸"></em></span></p>
+					</div>
+				</li>
+				<li>
+					<div>
+						<img src="image/bg/mvs2.jpg" />
+						<p><a href="#"></a><em title="设为壁纸"></em></p>
+					</div>
+				</li>
+				<li>
+					<div>
+						<img src="image/bg/mvs3.jpg" />
+						<p><a href="#"></a><em title="设为壁纸"></em></p>
+					</div>
+				</li>
+				<li>
+					<div>
+						<img src="image/bg/mvs4.jpg" />
+						<p><a href="#"></a><em title="设为壁纸"></em></p>
+					</div>
+				</li>
+				<li>
+					<div>
+						<img src="image/bg/mvs5.jpg" />
+						<p><a href="#"></a><em title="设为壁纸"></em></p>
+					</div>
+				</li>
+				<li>
+					<div>
+						<img src="image/bg/mvs6.jpg" />
+						<p><a href="#"></a><em title="设为壁纸"></em></p>
+					</div>
+				</li>
+				<li>
+					<div>
+						<img src="image/bg/mvs7.jpg" />
+						<p><a href="#"></a><em title="设为壁纸"></em></p>
+					</div>
+				</li>
+				<li>
+					<div>
+						<img src="image/bg/mvs8.jpg" />
+						<p><a href="#"></a><em title="设为壁纸"></em></p>
+					</div>
+				</li>
+				<li>
+					<div>
+						<img src="image/bg/zrs1.jpg" />
+						<p><a href="#"></a><em title="设为壁纸"></em></p>
+					</div>
+				</li>
+				<li>
+					<div>
+						<img src="image/bg/zrs2.jpg" />
+						<p><a href="#"></a><em title="设为壁纸"></em></p>
+					</div>
+				</li>
+				<li>
+					<div>
+						<img src="image/bg/zrs3.jpg" />
+						<p><a href="#"></a><em title="设为壁纸"></em></p>
+					</div>
+				</li>
+				<li>
+					<div>
+						<img src="image/bg/zrs4.jpg" />
+						<p><a href="#"></a><em title="设为壁纸"></em></p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="alert-foot"></div>
+</div>
+
+<!-- 桌面 -->
+<div id="desktop" class="gather" style="left:100px">   
+	<!-- 桌面导航 -->
+	<div class="web_top abs">
+		<div class="web_top_cn">
+			<div class="web_top_icon" id="web_top">
+			</div>
+			<ul class="web_top_focus clear" id="foucs1">
+				<li class="active"><a href="javascript:;">1</a></li>
+				<li><a href="javascript:;">2</a></li>
+				<li><a href="javascript:;">3</a></li>
+				<li><a href="javascript:;">4</a></li>
+				<li><a href="javascript:;">5</a></li>
+			</ul>
+			<div class="web_top_fl">
+				<a href="javascript:;" class="c_fa"></a><a href="javascript:;" class="c_ss"></a>
+			</div>
+		</div>
+	</div>
+	<!-- 桌面导航end -->
+	<div class="deskX1">
+		<div class="desk-cx active">
+			<ul class="deskUl">
+			
+				<li title="百度云" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/d_big_25.png" class="imgs" alt="" /></span>
+						<input type="text" value="百度云" />
+					</a>
+				</li>
+				<li title="金山快盘" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/big01.png" class="imgs" alt="" /></span>
+						<input type="text" value="金山快盘" />
+					</a>
+				</li>
+				<li title="浏览网页" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/big02.png" class="imgs" alt="" /></span>
+						<input type="text" value="浏览网页" />
+					</a>
+				</li>
+				<li title="作品集">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="作品集" />
+					</a>
+				</li>
+				<li title="音乐播放器">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="音乐播放器" />
+					</a>
+				</li>
+				<li title="绘图板">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="绘图板" />
+					</a>
+				</li>
+				<li title="飞机战斗">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="飞机战斗" />
+					</a>
+				</li>
+				<li title="五子棋">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="五子棋" />
+					</a>
+				</li>
+				<li title="石头剪刀布">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="石头剪刀布" />
+					</a>
+				</li>
+				<li title="移动书城">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="移动书城" />
+					</a>
+				</li>
+				<li title="webapp阅读器">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="webapp阅读器" />
+					</a>
+				</li>
+				<li title="饿了么">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="饿了么" />
+					</a>
+				</li>
+				<li title="在线教育平台">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="在线教育平台" />
+					</a>
+				</li>
+				<li title="商城网站">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="商城网站" />
+					</a>
+				</li>
+				<li title="小米网站">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="小米网站" />
+					</a>
+				</li>
+				<li title="响应式网站">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="响应式网站" />
+					</a>
+				</li>
+				<li title="原生JS组件">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="原生JS组件" />
+					</a>
+				</li>
+				<li title="ionic2应用">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="ionic2应用" />
+					</a>
+				</li>
+				
+				<li title="运动框架">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="运动框架" />
+					</a>
+				</li>
+				<li title="Node博客">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="Node博客" />
+					</a>
+				</li>
+				<li title="个人博客">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+						<input type="text" value="个人博客" />
+					</a>
+				</li>
+				<li id="cell4" work="a">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/Recycle cs4.png" alt="" /></span>
+						<input type="text" value="文件夹" />
+					</a>
+				</li>
+			</ul>
+			<div id="photo-but"></div>
+		</div>
+		<div class="desk-cx">
+			<ul>
+				<li title="欢乐斗地主" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/d_big_11.png" class="imgs" alt="" /></span>
+						<input type="text" value="欢乐斗地主" />
+					</a>
+				</li>
+				<li title="3366" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/d_big_12.png" class="imgs" alt="" /></span>
+						<input type="text" value="3366" />
+					</a>
+				</li>
+				<li title="QQ宝贝" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/d_big_13.png" class="imgs" alt="" /></span>
+						<input type="text" value="QQ宝贝" />
+					</a>
+				</li>
+				<li title="芒果旅游" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/d_big_21.png" class="imgs" alt="" /></span>
+						<input type="text" value="芒果旅游" />
+					</a>
+				</li>
+				<li title="团购地图">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/d_big_22.png" class="imgs" alt="" /></span>
+						<input type="text" value="团购地图" />
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="desk-cx">
+			<ul>
+				<li title="快递查询" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/d_big_23.png" class="imgs" alt="" /></span>
+						<input type="text" value="快递查询" />
+					</a>
+				</li>
+				<li title="便签" code="z" >
+					<a href="javascript:;">
+						<span><img src="image/deskicon/d_big_24.png" class="imgs" alt="" /></span>
+						<input type="text" value="便签" />
+					</a>
+				</li>
+				<li title="一听音乐" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/big04.png" class="imgs" alt="" /></span>
+						<input type="text" value="一听音乐" />
+					</a>
+				</li>
+				<li title="应用汇" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/big05.png" class="imgs" alt="" /></span>
+						<input type="text" value="应用汇" />
+					</a>
+				</li>
+				<li title="QQ中心">
+					<a href="javascript:;" class="cell1">
+						<span><img src="image/deskicon/big06.png" alt="" /></span>
+						<input type="text" value="QQ中心" />
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="desk-cx">
+			<ul>
+				<li title="起点中文网" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/d_big_41.png" class="imgs" alt="" /></span>
+						<input type="text" value="起点中文" />
+					</a>
+				</li>
+				<li title="QQ阅读" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/d_big_42.png" class="imgs" alt="" /></span>
+						<input type="text" value="QQ阅读" />
+					</a>
+				</li>
+				<li title="音乐盒子" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/d_big_43.png" class="imgs" alt="" /></span>
+						<input type="text" value="音乐盒子" />
+					</a>
+				</li>
+				<li title="腾讯视频" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/big1.png" class="imgs" alt="" /></span>
+						<input type="text" value="腾讯视频" />
+					</a>
+				</li>
+				<li title="乐视网" code="z" >
+					<a href="javascript:;" class="cell1">
+						<span><img src="image/deskicon/d_big_45.png" alt="" /></span>
+						<input type="text" value="乐视网" />
+					</a>
+				</li>
+				<li title="朋友网" code="z" >
+					<a href="javascript:;" class="cell2">
+						<span><img src="image/deskicon/d_big_51.png" alt="" /></span>
+						<input type="text" value="朋友网" />
+					</a>
+				</li>
+				<li title="QQ阅读" code="z">
+					<a href="javascript:;" class="cell3">
+						<span><img src="image/deskicon/d_big_52.png" alt="" /></span>
+						<input type="text" value="QQ阅读" />
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="desk-cx">
+			<ul>
+				<li title="QQ群空间" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/d_big_53.png" class="imgs" alt="" /></span>
+						<input type="text" value="好友管理" />
+					</a>
+				</li>
+				<li title="开开" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/d_big_54.png" class="imgs" alt="" /></span>
+						<input type="text" value="开开" />
+					</a>
+				</li>
+				<li title="开心交友" code="z">
+					<a href="javascript:;">
+						<span><img src="image/deskicon/d_big_55.png" class="imgs" alt="" /></span>
+						<input type="text" value="开心交友" />
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 弹窗缩小窗口-->
+	<div class="task" id="task_main">
+		<!--
+		<div class="task_menu_cn">
+			<div class="task_menu">
+				<h4 class="task_title">起点中文</h4>
+				<a class="task_max"></a>
+				<a class="task_close"></a>
+			</div>
+		</div>
+		-->
+	</div>
+	<!-- 弹窗缩小窗口end-->
+
+	<!-- 展开格子 -->
+	<div class="folder pos">
+		<div class="pos-bg"></div>
+		<div class="pos-cont">
+			<h4>文件夹<span></span></h4>
+			<div class="pos-ul">
+				<ul class="pos-pare">
+					<li><span></span>html5课件</li>
+					<li><span></span>html5特性</li>
+					<li><span></span>jQ综合视频</li>
+					<li><span></span>js高级程序</li>
+					<li><span></span>image</li>
+					<li><span></span>js</li>
+					<li><span></span>webApp</li>
+					<li><span></span>学习资料</li>
+					
+					<li><span></span>html5课件</li>
+					<li><span></span>html5特性</li>
+					<li><span></span>jQ综合视频</li>
+					<li><span></span>js高级程序</li>
+					<li><span></span>image</li>
+					<li><span></span>js</li>
+					<li><span></span>webApp</li>
+					<li><span></span>学习资料</li>
+
+					<li><span></span>html5课件</li>
+					<li><span></span>html5特性</li>
+					<li><span></span>jQ综合视频</li>
+					<li><span></span>js高级程序</li>
+					<li><span></span>image</li>
+					<li><span></span>js</li>
+					<li><span></span>webApp</li>
+					<li><span></span>学习资料</li>
+				</ul>
+			</div>
+			<div class="scroll"><span></span></div>
+		</div>
+	</div>
+</div>
+<!-- 桌面end -->
+
+<!-- 推荐 -->
+<div class="q-recom gather" style="left:1700px">
+	<ul class="q-recom-list">
+		<li class="q-recom-col">
+			<div class="q-recom-box">
+				<div class="q-recom-bg"></div>
+				<div class="q-recom-title">
+					<div class="recom-title-bg"></div>
+					<h2>游戏<span></span></h2>
+					<div class="recom-title-btn">
+						<span>
+							<a href="javascript:;" class="active"></a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;"></a>
+						</span>
+						<em>
+							<a href="javascript:;" class="recom-prev-btn"></a>
+							<a href="javascript:;" class="recom-next-btn"></a>
+						</em>
+					</div>
+				</div>
+				<div class="q-recom-content">
+					<div class="q-recom-lists">
+						<div class="q-recom-banner"><img src="image/images/recom1.jpg" /></div>
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三国</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三国</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三国</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三国</span>
+								<em>一亿人</em>
+							</li>
+						</ul>
+					 </div>
+					 <div class="q-recom-lists">
+						<div class="q-recom-banner"><img src="image/images/recom1a.jpg" /></div>
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三1</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三1</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三1</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三1</span>
+								<em>一亿人</em>
+							</li>
+						</ul>
+					 </div>
+					 <div class="q-recom-lists">
+						<div class="q-recom-banner"><img src="image/images/recom1b.jpg" /></div>
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三2</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三2</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三2</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三2</span>
+								<em>一亿人</em>
+							</li>
+						</ul>
+					 </div>
+				</div>
+			</div>
+		</li>
+		<li class="q-recom-col">
+			<div class="q-recom-box">
+				<div class="q-recom-bg"></div>
+				<div class="q-recom-title">
+					<div class="recom-title-bg"></div>
+					<h2>视频<span></span></h2>
+					<div class="recom-title-btn">
+						<span>
+							<a href="javascript:;" class="active"></a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;"></a>
+						</span>
+						<em>
+							<a href="javascript:;" class="recom-prev-btn"></a>
+							<a href="javascript:;" class="recom-next-btn"></a>
+						</em>
+					</div>
+				</div>
+				<div class="q-recom-content">
+					<div class="q-recom-lists">
+						<div class="q-recom-banner"><img src="image/images/recom2.jpg" /></div>
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三国</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三国</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三国</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三国</span>
+								<em>一亿人</em>
+							</li>
+						</ul>
+					 </div>
+					 <div class="q-recom-lists">
+						<div class="q-recom-banner"><img src="image/images/recom2a.jpg" /></div>
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三1</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三1</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三1</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三1</span>
+								<em>一亿人</em>
+							</li>
+						</ul>
+					 </div>
+					 <div class="q-recom-lists">
+						<div class="q-recom-banner"><img src="image/images/recom2b.jpg" /></div>
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三2</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三2</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三2</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三2</span>
+								<em>一亿人</em>
+							</li>
+						</ul>
+					 </div>
+				</div>
+			</div>
+		</li>
+		<li class="q-recom-col">
+			<div class="q-recom-box">
+				<div class="q-recom-bg"></div>
+				<div class="q-recom-title">
+					<div class="recom-title-bg"></div>
+					<h2>音乐<span></span></h2>
+					<div class="recom-title-btn">
+						<span>
+							<a href="javascript:;" class="active"></a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;"></a>
+						</span>
+						<em>
+							<a href="javascript:;" class="recom-prev-btn"></a>
+							<a href="javascript:;" class="recom-next-btn"></a>
+						</em>
+					</div>
+				</div>
+				<div class="q-recom-content">
+					<div class="q-recom-lists">
+						<div class="q-recom-banner"><img src="image/images/recom3.jpg" /></div>
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三国</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三国</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三国</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三国</span>
+								<em>一亿人</em>
+							</li>
+						</ul>
+					 </div>
+					 <div class="q-recom-lists">
+						<div class="q-recom-banner"><img src="image/images/recom3a.jpg" /></div>
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三1</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三1</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三1</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三1</span>
+								<em>一亿人</em>
+							</li>
+						</ul>
+					 </div>
+					 <div class="q-recom-lists">
+						<div class="q-recom-banner"><img src="image/images/recom3b.jpg" /></div>
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三2</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三2</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三2</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三2</span>
+								<em>一亿人</em>
+							</li>
+						</ul>
+					 </div>
+				</div>
+			</div>
+		</li>
+		<li class="q-recom-col">
+			<div class="q-recom-box">
+				<div class="q-recom-bg"></div>
+				<div class="q-recom-title">
+					<div class="recom-title-bg"></div>
+					<h2>读书<span></span></h2>
+					<div class="recom-title-btn">
+						<span>
+							<a href="javascript:;" class="active"></a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;"></a>
+						</span>
+						<em>
+							<a href="javascript:;" class="recom-prev-btn"></a>
+							<a href="javascript:;" class="recom-next-btn"></a>
+						</em>
+					</div>
+				</div>
+				<div class="q-recom-content">
+					<div class="q-recom-lists">
+						<div class="q-recom-banner"><img src="image/images/recom4.jpg" /></div>
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三国</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三国</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三国</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三国</span>
+								<em>一亿人</em>
+							</li>
+						</ul>
+					 </div>
+					 <div class="q-recom-lists">
+						<div class="q-recom-banner"><img src="image/images/recom4a.jpg" /></div>
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三1</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三1</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三1</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三1</span>
+								<em>一亿人</em>
+							</li>
+						</ul>
+					 </div>
+					 <div class="q-recom-lists">
+						<div class="q-recom-banner"><img src="image/images/recom4b.jpg" /></div>
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三2</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三2</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三2</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三2</span>
+								<em>一亿人</em>
+							</li>
+						</ul>
+					 </div>
+				</div>
+			</div>
+		</li>
+		<li class="q-recom-col">
+			<div class="q-recom-box">
+				<div class="q-recom-bg"></div>
+				<div class="q-recom-title">
+					<div class="recom-title-bg"></div>
+					<h2>综合<span></span></h2>
+					<div class="recom-title-btn">
+						<span>
+							<a href="javascript:;" class="active"></a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;"></a>
+						</span>
+						<em>
+							<a href="javascript:;" class="recom-prev-btn"></a>
+							<a href="javascript:;" class="recom-next-btn"></a>
+						</em>
+					</div>
+				</div>
+				<div class="q-recom-content">
+					<div class="q-recom-lists">
+						<div class="q-recom-banner"><img src="image/images/recom5.jpg" /></div>
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三国</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三国</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三国</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三国</span>
+								<em>一亿人</em>
+							</li>
+						</ul>
+					 </div>
+					 <div class="q-recom-lists">
+						<div class="q-recom-banner"><img src="image/images/recom5a.jpg" /></div>
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三1</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三1</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三1</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三1</span>
+								<em>一亿人</em>
+							</li>
+						</ul>
+					 </div>
+					 <div class="q-recom-lists">
+						<div class="q-recom-banner"><img src="image/images/recom5b.jpg" /></div>
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三2</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三2</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三2</span>
+								<em>一亿人</em>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三2</span>
+								<em>一亿人</em>
+							</li>
+						</ul>
+					 </div>
+				</div>
+			</div>
+		</li>
+		<li class="q-recom-col">
+			<div class="q-recom-box">
+				<div class="q-recom-bg"></div>
+				<div class="q-recom-title">
+					<div class="recom-title-bg"></div>
+					<h2>好友在用<span></span></h2>
+					<div class="recom-title-btn">
+						<span>
+							<a href="javascript:;" class="active"></a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;"></a>
+						</span>
+						<em>
+							<a href="javascript:;" class="recom-prev-btn"></a>
+							<a href="javascript:;" class="recom-next-btn"></a>
+						</em>
+					</div>
+				</div>
+				<div class="q-recom-content" id="recoms">
+					<div class="q-recom-lists">
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三</span>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三</span>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三</span>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三</span>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三</span>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三</span>
+							</li>
+						</ul>
+					 </div>
+					 <div class="q-recom-lists">
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三1</span>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三1</span>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三1</span>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三1</span>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三1</span>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三1</span>
+							</li>
+						</ul>
+					 </div>
+					 <div class="q-recom-lists">
+						<ul>
+							<li>
+								<p><img src="image/winpic/logo_46.png" /></p>
+								<span>胡莱三2</span>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_47.png" /></p>
+								<span>美人三2</span>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三2</span>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三2</span>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_48.png" /></p>
+								<span>胡莱三2</span>
+							</li>
+							<li>
+								<p><img src="image/winpic/logo_49.png" /></p>
+								<span>胡莱三2</span>
+							</li>
+						</ul>
+					 </div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+<!-- 推荐end -->
+
+<!-- 网址 -->
+<div class="q-url-main gather" style="left:1700px">
+	<div class="url-search">
+		<form id="search-form" method="get" target="_blank" action="http://www.so.com/s?">
+			<div class="search-cat">
+				<a href="javascript:;" catname="webpage" class="active">网页</a>
+				<a href="javascript:;" catname="news">新闻</a>
+				<a href="javascript:;" catname="video">视频</a>
+				<a href="javascript:;" catname="image">图片</a>
+				<a href="javascript:;" catname="music">音乐</a>
+				<a href="javascript:;" catname="map">地图</a>
+				<a href="javascript:;" catname="wenda">问答</a>
+			</div>
+			<div class="search">
+				<div class="ipt">
+					<div class="search-switch">
+						<a href="javascript:;" id="sear-icons" class="so"></a>
+						<div class="search-arr">
+							<span></span>
+						</div>
+						<ul class="search-menu">
+							<li><a href="javascript:;" class="so">360搜索</a></li>
+							<li><a href="javascript:;" class="google">谷歌</a></li>
+							<li style="display:none"><a href="javascript:;" class="sogou">搜狗</a></li>
+							<li><a href="javascript:;" class="baidu">百度</a></li>
+						</ul>
+					</div>
+					<input type="" id="search-kw" placeholder="360搜索" name="q" autocomplete="off" />
+					<a href="javascript:;" class="search-hotwords"></a>
+				</div>
+				<div class="url-btn"></div>
+			</div>
+		</form>
+	</div>
+	<div class="q-link">
+		<div class="q-linkbox">
+			<ul>
+				<li class="active" catname="url"><a href="javascript:;">常用网址</a></li>
+				<li catname="video"><a href="javascript:;">视频</a></li>
+				<li catname="game"><a href="javascript:;">游戏</a></li>
+				<li catname="shopping"><a href="javascript:;">购物</a></li>
+				<li catname="book"><a href="javascript:;">小说</a></li>
+				<li catname="news"><a href="javascript:;">新闻</a></li>
+				<li catname="bbs"><a href="javascript:;">社区</a></li>
+				<li catname="music"><a href="javascript:;">音乐</a></li>
+				<li catname="finance"><a href="javascript:;">财经</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="q-link-list">
+		<ul>
+		</ul>
+	</div>
+</div>
+<!-- 网址end -->
+
+<!-- 右键菜单 -->
+<div id="right-menu"> 
+	<ul class="menu-ul">
+		<li>
+			<a href="javascript:;">显示桌面</a>
+		</li>
+		<li>
+			<a href="javascript:;">整理图标</a>
+		</li>
+		<li class="menu-line">
+			<a href="javascript:;">恢复默认布局</a>
+		</li>
+		<li>
+			<a href="javascript:;">查看<span></span></a>
+			<ul class="wt-icon" id="Icon">
+				<li class="active"><a href="javascript:;"><em></em>默认图标</a></li>
+				<li class="menu-line"><a href="javascript:;"><em></em>小图标</a></li>
+				<li class="active1"><a href="javascript:;"><em></em>大图标</a></li>
+				<li><a href="javascript:;"><em></em>横向排列图标</a></li>
+				<li class="menu-line active"><a href="javascript:;"><em></em>纵向排列图标</a></li>
+				<li class="menu-line active1"><a href="javascript:;"><em></em>自动排列图标</a></li>
+			</ul>
+		</li>
+		<li id="refresh">
+			<a href="javascript:;">刷新</a>
+		</li>
+		<li class="menu-line">
+			<a href="javascript:;">排序方式<span></span></a>
+			<ul>
+				<li><a href="javascript:;"><em></em>名称</a></li>
+				<li><a href="javascript:;"><em></em>大小</a></li>
+				<li><a href="javascript:;"><em></em>类型</a></li>
+				<li class="menu-line"><a href="javascript:;"><em></em>修改时间</a></li>
+				<li><a href="javascript:;"><em></em>标记文件置顶</a></li>
+			</ul>
+		</li>
+		<li class="menu-line">
+			<a href="javascript:;">新建<span></span></a>
+			<ul class="wt-fun">
+				<li class="fun1"><a href="javascript:;"><em></em>桌面格子</a></li>
+				<li class="fun2"><a href="javascript:;"><em></em>文件夹</a></li>
+			</ul>
+		</li>
+		<li class="menu-line" id="talk-menu">
+			<a href="javascript:;">我的说说</a>
+		</li>
+		<li>
+			<a href="javascript:;">设置中心</a>
+		</li>
+		<li>
+			<a href="javascript:;" id="setbg">更换壁纸</a>
+		</li>
+	</ul>
+</div>
+<!-- 右键菜单end -->
+
+<!-- 方格子 -->
+<div id="cell">
+	<ul>
+		<li>展开格子</li>
+		<li class="active">列表显示</li>
+		<li>收起此格子</li>
+		<li>移除此格子</li>
+	</ul>
+</div>
+
+<div class="cell-file">
+	<a href="javascript:;">
+		<span><img src="image/deskicon/folder_o.png" alt="" /></span>
+		<em>文件夹</em>
+	</a>
+</div>
+<!-- 方格子end -->
+
+<!-- 确认弹出框 -->
+<div class="con-alert">
+	<span class="close"></span>
+	<a href="#" class="con-affirm"></a>
+	<a href="#" class="cancel"></a>
+</div>
+<!-- 确认弹出框end -->
+
+<!-- 修改密码框 -->
+<div class="pass-login">
+	<span class="pass-close"></span>
+	<ul>
+		<li><input type="text" value="" class="now-text" /></li>
+		<li><input type="password" class="new-pass" value="" /></li>
+	</ul>
+	<div class="pass-sub"><input type="button" class="pass-btn" value=""></div>
+</div>
+<!-- 修改密码框end -->
+<!-- 提示框 -->
+<div class="browser_alert" style="display:none">
+	<a href="javascript:;" class="browser-close"></a>
+	<p class="browser_title">由于浏览器采用了HTML5 css3技术进行开发，所以低版本浏览器将无法展现网站的全部效果，建议您升级浏览器，然后进行访问。</p>
+	<p class="browser_content"></p>
+	<p class="browser_btn"></p>
+</div>
+<!-- 提示框end -->
+
+<!-- 我的说说 -->
+<div class="login-box">
+	<div class="login-main">
+		<div class="q-login">
+			<a href="javascript:;" class="qt-close"></a>
+			<!--<div class="q-portrait"><img src="image/talk/port1.png" /></div>-->
+			<div class="q-form">
+				<ul>
+					<li class="q-formbox"><span class="user-icon"></span><input type="text" placeholder="Username" class="q-text" value="" /></li>
+					<li class="q-formbox"><span class="pass-icon"></span><input type="password" placeholder="Password" class="q-pass" value="" /></li>
+					<li id="q-user">
+						<span class="pass-ct"><em id="passd"></em>记住密码</span>
+						<span class="logind-ct"><em id="logind"></em>自动登录</span>
+					</li>
+				</ul>
+			</div>
+			<span class="q-register">注册</span>
+			<div class="sub-main">
+				<input type="button" value="" class="q-sub" />
+			</div>
+		</div>
+		<div class="qs-login">
+			<h2>账号注册</h2>
+			<span class="qs-login-left"></span>
+			<div class="qs-form">
+				<ul>
+					<li class="qs-box"><em>昵称</em><input type="text" class="qs-user" /></li>
+					<li class="qs-box"><em>密码</em><input type="password" class="qs-pass" /></li>
+					<li><em>确认密码</em><input type="password" class="qs-passd" /></li>
+					<li class="qs-sex">
+						<em>性别</em>
+						<span class="man-ct active">男<b id="man"></b></span>
+						<span class="woman-ct">女<b id="woman"></b></span>
+					</li>
+				</ul>
+			</div>
+			<div class="qs-sub">
+				<input type="button" id="qs-confirm" value="确定" />
+				<input type="button" id="qs-cancel" value="取消" />
+			</div>
+			<span class="qs-login-right"></span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="talk-alert">
+	<div class="talk-title">
+		<h2>Q+说说</h2>
+		<a href="javascript:;" class="talk-close"></a>
+		<a href="javascript:;" class="talk-shrink"></a>
+	</div>
+	<div class="talk-scroll"><span></span></div>
+	<div class="talk-cont">
+		<section class="wsy_wrap_inner">
+			<header>
+				<ul class="wsy-title">
+					<li class="active">Q+说说</li>
+					<li>我的说说</li>
+				</ul>
+			</header>
+			<div class="q-talk talkp">
+				<div class="wsy_textx">
+					<textarea class="wsy-soso" maxLength="150" required="required"></textarea>
+					<div class="sub-bm">
+						<input type="submit" id="publish" value="发表说说" />
+					</div>
+				</div>
+				<section class="wsy-list">
+					<ul class="lists">
+					</ul>
+					<div class="q-page">
+						<span class="prev-page">上一页</span>
+						<a href="javascript:;" class="active">1</a>
+						<a href="javascript:;">2</a>
+						<a href="javascript:;">3</a>
+						<a href="javascript:;">4</a>
+						<a href="javascript:;">5</a>
+						<span class="next-page">下一页</span>
+					</div>
+				</section>
+			</div>
+			<div class="my-talk talkp">
+				<div class="my_textx">
+					<textarea class="my-soso" maxLength="150" required="required"></textarea>
+					<div class="sub-bm">
+						<input type="submit" value="发表说说" id="my-talk-btn" />
+					</div>
+				</div>
+				<section class="my-list">
+					<ul class="my-list-ul">
+					</ul>
+				</section>
+			</div>
+		</section>
+	</div>
+</div>	
+<!-- 我的说说end -->
+<!-- 项目介绍简介 -->
+<div class="works-main">
+<span class="works-closes"></span>
+<section class="work-wrap">
+	<section class="cMContentBox">
+		<hgroup>
+			<h2>Q+开发功能介绍</h2>
+		</hgroup>
+		<p class="cMContentText">这个项目是模仿腾讯的一款桌面软件 "Q+" ,运用了js,css3,html5的相关知识,自己编写了一些方法库和插件</p>
+		<div class="zm-btn">
+			<a href="#">项目功能介绍</a>
+		</div>
+		<section class="cMContent">
+			<h3>Q+项目功能介绍</h3>
+			<a href="#" class="works-close"></a>
+			<section class="alertBoxWindow">
+				<table class="alertBoxWindowC" cellspacing="0" cellpadding="0">
+					<tbody>
+						<tr>
+							<th width="70">1</th>
+							<td><strong>会员登录：</strong>运用了html5的本地存储，进行了<span>会员注册，登录和验证</span>的操作，根据不同的账号和密码进行存储。能够记住用户密码和自动登录，修改密码。显示相应的会员界面和会员专属功能，在谷歌和火狐下可使用。
+							</td>
+						</tr>
+						<tr>
+							<th width="70">2</th>
+							<td><strong>壁纸记录：</strong>会员登录后可以使用<span>壁纸使用和收藏</span>，更具不同的用户存储对应的收藏和使用，登录后自动获取会员壁纸的使用和收藏记录，可进行添加,删除。 
+							</td>
+						</tr>
+						<tr>
+							<th width="70">3</th>
+							<td><strong>读取壁纸地址：</strong>导航栏的<span>《壁纸》</span>下拉框，点击"换一批"，会自动从josn里随机读取不同种类的图片，图片由小到大显示。
+							</td>
+						</tr>
+						<tr>
+							<th width="70">4</th>
+							<td><strong>壁纸库：</strong>桌面壁纸<span><<壁纸库>></span>运用了ajax瀑布流原理，拖到滚动条或鼠标滚轮到相应位置，会从json里读取图片地址信息。
+							</td>
+						</tr>
+						<tr>
+							<th width="70">5</th>
+							<td><strong>发表说说：</strong>会员登录后可以打开<span>《我的说说》</span>，"Q+说说"栏目的的文字信息和图片，点击分页时会从json里读取信息，可进行表情，文字回复，发表说说等操作。
+							</td>
+						</tr>
+						<tr>
+							<th width="70">6</th>
+							<td>
+								<strong>存储我的说说：</strong>
+								可在<span>《我的说说》</span>里发表说说，会根据用户的不同，存储对应的信息。可进行留言，删除操作，下次登录可见。
+							</td>
+						</tr>
+						<tr>
+							<th width="70">7</th>
+							<td><strong>创建格子：</strong>点击鼠标右边出现鼠标菜单,点击新建<span>"桌面格子"</span>,可以创建多个格子，格子间里的文件可以互相交换，桌面和格子里的文件也可进行交换操作。可进行 "展示","收起","移除"格子等操作。移除后文件全部移动到桌面。单个格子文件个数大于6个，会出现滚动条，可以拖拽，鼠标滚轮操作。
+							</td>
+						</tr>
+						<tr>
+							<th width="70">8</th>
+							<td><strong>新建文件夹：</strong>点击鼠标右边可以新建<span>"文件夹"</span>,可以进行文件夹命名。
+							</td>
+						</tr>
+						<tr>
+							<th width="70">9</th>
+							<td><strong>Desktop APP：</strong>
+							（1）<span>APP自动竖排布局：</span>根据可视区的高度，计算出每一个APP的top和left值，然后设置；
+							（2）<span>APP互换位置</span>（缓冲运动效果）：判断距离最近APP，然后让两者的top和left值互相更换；
+							（3）<span>窗口改变</span>大小的时APP重新排列位置：当window.onresize事件触发时，立即重新排列APP；
+							</td>
+						</tr>
+						<tr>
+							<th width="70">10</th>
+							<td>
+								<strong>APP的弹出层：</strong>
+								（1）具有<span>最小化，</span><span>最大化，</span><span>还原窗口功能：</span>最小化使用多个运动让效果达到逼真的最小化动画效果；
+								（2）根据点击不同的APP，改变弹出层内容:设置对应的链接内容，达到最好的体验效果
+							</td>
+						</tr>
+						<tr>
+							<th width="70">11</th>
+							<td>
+								<strong>恢复默认布局：</strong>
+								将桌面布局恢复到初始位置。
+							</td>
+						</tr>
+						<tr>
+							<th width="70">12</th>
+							<td>
+								<strong>右键菜单【刷新】：</strong>模拟<span>windows刷新</span>功能
+							</td>
+						</tr>
+						<tr>
+							<th width="70">13</th>
+							<td>
+								<strong>右键菜单【图标设置】：</strong>
+								可以切换图标，改变桌面图标的大小，以运动的形式移动位置
+							</td>
+						</tr>
+						<tr>
+							<th width="70">14</th>
+							<td>
+								<strong>设置弹出框：</strong>
+								（1）<span>自由拖拽</span>（限制在可视区范围）：将自由拖拽封装成函数，在这里调用；
+								（2）移入移出的运动效果：使用已经封装好的运动框架，让其在打开、关闭时做缓冲运动；
+								（3）弹出框的四周均使用了CSS3中的“border-radius”，这样来设置圆角。
+								（4）新窗口设有<span>最小化、</span><span>最大化、</span><span>缩小</span>以及关闭功能，双击标题栏也可缩放，窗口最小化后将在任务栏中出现
+							</td>
+						</tr>
+						<tr>
+							<th width="70">15</th>
+							<td>
+								<strong>点击焦点切换3D桌面</strong>
+								点击焦点数字的时候，运用css3的<span>3D变换效果</span>，并改变透明度切换桌面图标
+							</td>
+						</tr>
+						<tr>
+							<th width="70">16</th>
+							<td>
+								<strong>右上角菜单:</strong>
+								点击桌面<span>【个人信息】</span>菜单，打开页面，分为5个版块，高版本浏览器运用3D动画效果进行桌面切换，低版本浏览器呢采用运动缓冲效果。
+							</td>
+						</tr>
+						<tr>
+							<th width="70">17</th>
+							<td>
+								<strong>文件夹:</strong>
+								鼠标右键点击桌面<span>名字为"文件夹"</span>的图标，可以将文件夹展开，可以将桌面和文件夹存放的文件相互交换存放，存放文件少于一定数量，滚动条消失，移除此格子，格子内存放的文件，全部移动到桌面显示。
+							</td>
+						</tr>
+						<tr>
+							<th width="70">18</th>
+							<td>
+								<strong>界面切换:</strong>
+								导航上方三个版块"桌面","推荐","网址"，点击可以进行页面之间运动的切换。
+							</td>
+						</tr>
+						<tr>
+							<th width="70">19</th>
+							<td>
+								<strong>推荐版块:</strong>
+								版块内分为6个栏目，可以进行点击和左右按钮之间来回的切换，互相不会有影响。
+							</td>
+						</tr>
+						<tr>
+							<th width="70">20</th>
+							<td>
+								<strong>网址版块:</strong>
+								版块内有一个多功能的<span>搜索框</span>,可以用不同的4种浏览引擎在"网页","新闻", ”视频","图片","音乐","地图","问答" 8个频道之间进行搜索。
+							</td>
+						</tr>
+						<tr>
+							<th width="70">21</th>
+							<td>
+								<strong>网址版块:</strong>
+								下方有各种网站的搜索快速窗口，可以点击直接进入当前的网站，每次点击不同的栏目，图片都会产生运动效果，删除某个图片，会自动进行运动排序。
+							</td>
+						</tr>
+						
+						<tr>
+							<th width="70">22</th>
+							<td>
+								<strong>公有的方法库和jq插件</strong>
+								手动编写了一些常用的js方法库和jquery插件。整个网站运动了jquery配合面向对象的写法，实现了模块化，功能块的划分。
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<div class="alertBoxScroll"><span></span></div>
+		</section>
+	  </section>
+
+	  <section class="cMContentBox">
+		<hgroup>
+			<h2>个人资料</h2>
+		</hgroup>
+		<p class="cMContentText">
+			<strong>姓名 : poetries</strong><br/>
+			<strong>男 | 24岁</strong><br/>
+			<strong>居住地：深圳南山</strong><br/>
+			<strong>最高学历： 本科</strong><br/>
+			<strong>个人网站：<a href="http://blog.poetries.top" target="_blank">http://blog.poetries.top</a></strong><br/>	
+		</p>
+	  </section>
+
+	  <section class="cMContentBox">
+		<hgroup>
+			<h2>工作经历</h2>
+		</hgroup>
+		<p class="cMContentText"  style="margin-top:-15px;">
+			暂无
+		</p>
+		<p class="cMContentText" style="padding-top:10px;">
+			暂无
+		</p>
+		
+	  </section>
+
+	  <section class="cMContentBox">
+		<hgroup>
+			<h2>专业技能</h2>
+		</hgroup>
+		<p class="cMContentText" style="margin-top:-15px;">
+			1. 熟悉HTML5、CSS3，熟练掌握HTML、DIV+CSS等前端开发技术<br/>
+			2. 熟悉原生JavaScript,掌握DOM、Ajax、JSON、Jsonp<br/>
+			3. 熟悉使用jQuery类库、Bootstrap框架<br/>
+			4. 熟悉SCSS、Gulp、Webpack、Git、npm等前端项目构建和管理工具<br/>
+			5. 了解Vue框架，了解服务端语言Node、Python<br/>
+			6. 目前在关注学习Node、Vue、ES6、Linux等<br/>
+			
+		</p>
+	  </section>
+
+	  <section class="cMContentBox">
+		<hgroup>
+			<h2>联系方式</h2>
+		</hgroup>
+		<p class="cMContentText" style="line-height:35px;">
+			<strong>QQ/微信 ：1719662073 </strong><br/>
+			<strong>电　话 ：18878554070（手机）</strong><br/>			
+			<strong>E-mail : me@poetries.top</strong><br/>
+			<strong>博客 : http://blog.poetries.top</strong><br/>
+			<strong>GitHub : https://github.com/poetries</strong><br/>
+			<strong>weibo : http://weibo.com/poetries1</strong><br/>
+		</p>
+	  </section>
+
+   </section>
+	   <nav class="work-nav">
+			<a href="#" class="work-prev-btn" id="L"></a>
+			<ul class="work-intro">
+				<li><a href="#">功能介绍</a></li>
+				<li><a href="#">个人资料</a></li>
+				<li><a href="#">工作经历</a></li>
+				<li><a href="#">专业技能</a></li>
+				<li><a href="#">联系方式</a></li>
+			</ul>
+			<a href="#" class="work-next-btn active" id="R"></a>
+			<span class="active" style="opacity: 1; left: -8px;"></span>
+	   </nav>	
+</section>
+</div>
+<!-- 项目介绍简介end -->
+</div>
+</body>
+</html>
